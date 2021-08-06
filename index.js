@@ -93,10 +93,17 @@ const loadingItems = () => {
 
 loadingItems()
 
+const beforeLastItemNum = 5
 // Compare to last item 
 const isLastItem = (item) => {
+  const { id:itemId } = item.dataset
   const lastItem = document.querySelector('.stack .item:last-child')
-  if (item.dataset.id === lastItem.dataset.id) {
+  const { id:lastItemId } = lastItem.dataset
+  
+  if (
+    lastItemId >= beforeLastItemNum &&
+    lastItemId - beforeLastItemNum <= itemId
+  ) {
     console.log('Last item checked ✅')
     loadingItems()
     return true
