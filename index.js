@@ -37,18 +37,21 @@ const options = {
 }
 
 const observer_callBack = (entries, observer) => {
-  console.log(`entries`, entries)
   entries.forEach( entry => {
     const { target, isIntersecting } = entry
     
-    if (isIntersecting) { // Show item
-      const { background } = target?.style
-      if (!background) {
-        target.style.background = `url(${getRandomImageUrl()})`
+    if (!target.classList.contains('init')) {
+      console.log('Intersecting check for >>', entry)
+      if (isIntersecting) { // Show item
+        const { background } = target?.style
+        if (!background) {
+          target.style.background = `url(${getRandomImageUrl()})`
+        }
+        target.classList.remove('hide')
+        target.classList.add('init') // Add initialized flag for no hiding
+      } else { // Hide item
+        target.classList.add('hide')
       }
-      target.classList.remove('hide')
-    } else { // Hide item
-      target.classList.add('hide')
     }
   })
 }

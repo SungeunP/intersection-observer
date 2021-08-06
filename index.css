@@ -35,6 +35,9 @@
   transform: scaleX(0) scaleY(0);
   /* animation-name: item-hide; */
 }
+.stack .item.hide.init {
+  transform: none; /* No hiding for initialized items*/
+}
 .stack .item span {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 4px 8px;
