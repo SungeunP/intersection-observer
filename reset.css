@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 8px;
+  padding-left: calc(50% - 292px);  
+  padding-right: calc(50% - 292px);  
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
