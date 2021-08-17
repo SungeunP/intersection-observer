@@ -48,7 +48,7 @@ const observer_callBack = (entries, observer) => {
     const { target, isIntersecting } = entry
     
     if (!target.classList.contains('init')) {
-      console.log('Intersecting check for >>', entry)
+      // console.log('Intersecting check for >>', entry)
       if (isIntersecting) { // Show item
         const { background } = target?.style
         if (!background) {
@@ -104,7 +104,7 @@ const isLastItem = (item) => {
     lastItemId >= beforeLastItemNum &&
     lastItemId - beforeLastItemNum <= itemId
   ) {
-    console.log('Last item checked ✅')
+    // console.log('Last item checked ✅')
     loadingItems()
     return true
   }
